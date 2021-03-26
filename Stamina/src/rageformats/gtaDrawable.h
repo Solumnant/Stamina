@@ -8,6 +8,7 @@ gtaDrawable (#dr) is based on Codewalker's (https://github.com/dexyfex/CodeWalke
 #include <Xml.h>
 #include <math/Vectors.h>
 #include <rageformats/grmShaderGroup.h>
+#include <rageformats/grmModel.h>
 
 class gtaDrawable : IXml {
 private:
@@ -20,6 +21,7 @@ private:
 	Vector4 m_flags;
 	unsigned short m_unk;
 	grmShaderGroup m_shaderGroup;
+	grmModel m_models[4];
 
 public: 
 	void Resolve(rapidxml::xml_node<> *root);

@@ -7,4 +7,5 @@ void grmShaderGroup::Resolve(rapidxml::xml_node<> *node) {
 		}
 	}
 	m_txd.Resolve(node->first_node("TextureDictionary"));
+	m_shaderArr.Resolve(node->first_node("Shaders"));
 }

@@ -11,8 +11,8 @@ private:
 	unsigned short m_width;
 	unsigned short m_height;
 	char m_levels;
-	char *m_format;
-	char *m_fileName;
+	const char *m_format;
+	const char *m_fileName;
 public:
 	void Resolve(rapidxml::xml_node<> *node);
 };

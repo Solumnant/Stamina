@@ -50,4 +50,5 @@ void gtaDrawable::Resolve(rapidxml::xml_node<> *node) {
 	}
 
 	m_shaderGroup.Resolve(node->first_node("ShaderGroup"));
+	m_models[0].Resolve(node->first_node("DrawableModelsHigh")->first_node());
 }
