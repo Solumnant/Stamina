@@ -3,7 +3,7 @@
 #include <Stamina.h>
 
 void gtaDrawable::Resolve(rapidxml::xml_node<> *node) {
-	Stamina::Log(LEVEL_LOG, "Creating %s...", node->name());
+	//Stamina::Log(LEVEL_LOG, "Creating %s...", node->name());
 	for (rapidxml::xml_node<> *child = node->first_node(); child; child = child->next_sibling()) {
 		if (strcmp("Name", child->name()) == 0) {
 			m_name = child->value();

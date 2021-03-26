@@ -23,6 +23,10 @@ private:
 
 public: 
 	void Resolve(rapidxml::xml_node<> *root);
+
+	grmShaderGroup GetShaderGroup(void) {
+		return m_shaderGroup;
+	}
 };
 
 #endif

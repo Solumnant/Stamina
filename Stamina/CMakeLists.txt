@@ -1,4 +1,4 @@
-﻿add_library(Stamina SHARED "src/Stamina.cpp" "src/Stamina.h" "src/Xml.h" "src/rapidxml/rapidxml.hpp" "src/rapidxml/rapidxml_iterators.hpp" "src/rapidxml/rapidxml_print.hpp" "src/rapidxml/rapidxml_utils.hpp" "src/rageformats/gtaDrawable.h" "src/rageformats/gtaDrawable.cpp" "src/math/Vectors.h" "src/rageformats/grmShaderGroup.cpp")
+﻿add_library(Stamina SHARED "src/Stamina.cpp" "src/Stamina.h" "src/Xml.h" "src/rapidxml/rapidxml.hpp" "src/rapidxml/rapidxml_iterators.hpp" "src/rapidxml/rapidxml_print.hpp" "src/rapidxml/rapidxml_utils.hpp" "src/rageformats/gtaDrawable.h" "src/rageformats/gtaDrawable.cpp" "src/math/Vectors.h" "src/rageformats/grmShaderGroup.cpp" "src/rageformats/grcTextureDictionary.h" "src/rageformats/grcTexturePC.h" "src/rageformats/grcTextureDictionary.cpp" "src/rageformats/grcTexturePC.cpp")
 set_target_properties(Stamina 
                      PROPERTIES 
                      WINDOWS_EXPORT_ALL_SYMBOLS ON

@@ -1,4 +1,4 @@
-#include "grmShaderGroup.h"
+#include <rageformats/grmShaderGroup.h>
 
 void grmShaderGroup::Resolve(rapidxml::xml_node<> *node) {
 	for (rapidxml::xml_node<> *child = node->first_node(); child; child = child->next_sibling()) {
@@ -6,4 +6,5 @@ void grmShaderGroup::Resolve(rapidxml::xml_node<> *node) {
 			m_unk = atof(child->first_attribute()->value());
 		}
 	}
+	m_txd.Resolve(node->first_node("TextureDictionary"));
 }
