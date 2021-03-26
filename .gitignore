@@ -341,3 +341,6 @@ healthchecksdb
 
 # CMake
 out/
+
+# Local
+Client/
