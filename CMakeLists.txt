@@ -9,5 +9,6 @@ project ("Stamina")
 #add_subdirectory ("Stamina")
 
 add_subdirectory("Client")
-
 add_subdirectory("Stamina")
+add_subdirectory("Plugin")
+

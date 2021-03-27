@@ -1,6 +1,30 @@
 ﻿#include <Stamina.h>
 #include <stdio.h>
 
+#define DEBUG
+
+void Stamina::Init(void) {
+#ifdef DEBUG
+	if (!AllocConsole()) {
+		MessageBox(NULL, "Failed To Open Console", NULL, MB_OK);
+		return;
+	}
+	FILE *file;
+	freopen_s(&file, "CONOUT$", "w", stdout);
+#endif
+
+	Log(LEVEL_LOG, "Initializing Stamina...");
+	Log(LEVEL_LOG, "Finished initializing! Stamina loaded.");
+}
+
+void Stamina::Shutdown(void) {
+	Log(LEVEL_LOG, "Shutting down Stamina...");
+#ifdef DEBUG
+	FreeConsole();
+#endif
+}
+
+
 void Stamina::Log(eWARNING_LEVEL level, const char *fmt, ...) {
 	va_list		argptr;
 	char		msg[MAX_PRINT_MSG_SIZE];
