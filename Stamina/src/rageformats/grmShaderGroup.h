@@ -1,15 +1,16 @@
 #ifndef _GRM_SHADERGROUP_H
 #define _GRM_SHADERGROUP_H
 #include <Xml.h>
-#include <rageformats/grcTextureDictionary.h>
-#include <rageformats/grmShaderFx.h>
-#include <rageformats/grmShaderArray.h>
 
+#include <rageformats/grmShaderFx.h>
+#include <rageformats/grcTexturePC.h>
+#include <rageformats/CCollection.h>
 class grmShaderGroup : IXml {
 private:
 	unsigned int m_unk;
-	grcTextureDictionary m_txd; /* pgDictionary<grcTexturePC> */
-	grmShaderArray m_shaderArr /* pgObjectArray<grmShaderFx> */;
+	CCollection<grcTexturePC> m_txd; /* pgDictionary<grcTexturePC> */
+	//grmShaderArray m_shaderArr /* pgObjectArray<grmShaderFx> */;
+	CCollection<grmShaderFx> m_shaderArr;
 public:
 	void Resolve(rapidxml::xml_node<> *root);
 };
