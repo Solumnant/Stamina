@@ -1,6 +1,7 @@
+
 #ifndef _VECTORS_H
 #define _VECTORS_H
-
+#include <cmath>
 /*
 Taken from https://github.com/citizenfx/fivem/blob/34069da52f788a6e21c7ae2e9fc6d84dda932abe/code/components/rage-formats-x/include/rageVectors.h
 */

@@ -18,4 +18,5 @@ void grmModel::Resolve(rapidxml::xml_node<> *node) {
 			m_unk1 = (char)atof(child->first_attribute()->value());
 		}
 	}
+	m_geometries.Resolve(node->first_node("Geometries"));
 }
