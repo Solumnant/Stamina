@@ -50,7 +50,7 @@ void Stamina::Log(eWARNING_LEVEL level, const char *fmt, ...) {
 	}
 
 }
-
+/*
 const char *Stamina::AsciiString(const TCHAR *str) {
 #ifdef UNICODE
 	static char to_return[MAX_PATH];
@@ -68,5 +68,5 @@ const TCHAR *Stamina::MaxString(const char *str) {
 	return to_return;
 #else
 	return str;
-#endif
+#endif */
 }

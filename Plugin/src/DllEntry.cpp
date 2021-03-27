@@ -1,6 +1,9 @@
 #include <wtypes.h>
 #include <iparamb2.h>
 #include <Stamina.h>
+
+extern ClassDesc2 *GetResourceImporterDesc();
+
 HINSTANCE hInstance;
 BOOL WINAPI
 DllMain(HINSTANCE hinstDLL, ULONG fdwReason, LPVOID lpvReserved) {
@@ -8,8 +11,6 @@ DllMain(HINSTANCE hinstDLL, ULONG fdwReason, LPVOID lpvReserved) {
 	switch (fdwReason) {
 		case DLL_PROCESS_ATTACH:
 			hInstance = hinstDLL;
-
-
 			Stamina::Init();
 			//RegisterNotification(onStartup, NULL, NOTIFY_SYSTEM_STARTUP);
 			break;
@@ -38,7 +39,7 @@ __declspec(dllexport) ClassDesc2 *
 LibClassDesc(int i) {
 	switch (i) {
 		case 0:
-			return NULL /*desc()*/;
+			return GetResourceImporterDesc() /*desc()*/;
 
 		default:
 			return NULL;

@@ -1,7 +1,7 @@
 include(${CMAKE_CURRENT_SOURCE_DIR}/3dsmax.cmake)
 
 
-add_library(Plugin SHARED "src/DllEntry.cpp" "src/Plugin.def")
+add_library(Plugin SHARED "src/DllEntry.cpp" "src/Plugin.def" "src/ResourceImporter.h" "src/ResourceImporter.cpp" "src/StaminaMax.h")
 
 target_include_directories(Plugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
