@@ -8,7 +8,7 @@ private:
 	unsigned int m_name;
 	unsigned int m_fileName;
 	char m_renderBucket;
-	grmShaderParameterCollection m_parameters;
+	grmShaderParameterCollection m_parameters; //grmShaderParameter
 public:
 	void Resolve(rapidxml::xml_node<> *root);
 };

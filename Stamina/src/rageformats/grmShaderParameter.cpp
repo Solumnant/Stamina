@@ -8,6 +8,7 @@ void grmShaderParameter::Resolve(rapidxml::xml_node<> *node) {
 	if ((int)m_type == 0) {
 		m_samplerTxd = node->first_node()->value();
 	} else if ((int)m_type == 1) {
+		m_samplerTxd = NULL;
 		m_values = ParseVec4(node);
 	}
 }
