@@ -1,11 +1,14 @@
 #ifndef _XML_H
 #define _XML_H
 #include <rapidxml/rapidxml.hpp>
+#include <rapidxml/rapidxml_utils.hpp>
 #include <math/Vectors.h>
 #include <string>
+
 class IXml {
 	virtual void Resolve(rapidxml::xml_node<> *root) = 0;
 };
+
 
 inline Vector3 ParseVec3(rapidxml::xml_node<> *node) {
 	Vector3 temp;
