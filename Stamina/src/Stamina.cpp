@@ -1,5 +1,6 @@
 ﻿#include <Stamina.h>
 #include <stdio.h>
+
 #define DEBUG
 
 void Stamina::Init(void) {
@@ -41,7 +42,7 @@ void Stamina::Log(eWARNING_LEVEL level, const char *fmt, ...) {
 			break;
 		case LEVEL_ERROR:
 			printf("[ERROR]:" " " "%s\n", msg);
-			::MessageBox(0, msg, 0, 0);
+			::MessageBox(0, MaxString(msg), 0, 0);
 			break;
 		default:
 			printf("[PRINT]:" " " "%s\n", msg);
@@ -49,7 +50,7 @@ void Stamina::Log(eWARNING_LEVEL level, const char *fmt, ...) {
 	}
 
 }
-
+/*
 const char *Stamina::AsciiString(const TCHAR *str) {
 #ifdef UNICODE
 	static char to_return[MAX_PATH];
@@ -67,7 +68,5 @@ const TCHAR *Stamina::MaxString(const char *str) {
 	return to_return;
 #else
 	return str;
-#endif
+#endif */
 }
-
-#include <RscFile.h>
