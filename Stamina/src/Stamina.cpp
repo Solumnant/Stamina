@@ -50,24 +50,11 @@ void Stamina::Log(eWARNING_LEVEL level, const char *fmt, ...) {
 			printf("[PRINT]:" " " "%s\n", msg);
 			break;
 	}
+
 }
 
-/*const char *Stamina::AsciiString(const TCHAR *str) {
-#ifdef UNICODE
+const char *Stamina::AsciiString(const WCHAR *str) {
 	static char to_return[MAX_PATH];
 	wcstombs(to_return, str, MAX_PATH);
 	return to_return;
-#else
-	return str;
-#endif
 }
-
-const TCHAR *Stamina::MaxString(const char *str) {
-#ifdef UNICODE
-	static TCHAR to_return[MAX_PATH];
-	mbstowcs(to_return, str, MAX_PATH);
-	return to_return;
-#else
-	return str;
-#endif
-}*/

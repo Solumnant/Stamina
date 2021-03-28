@@ -7,6 +7,9 @@ class CCollection : IXml {
 	std::vector<T> m_collection;
 public:
 	void Resolve(rapidxml::xml_node<> *node) {
+		if (node == NULL) {
+			return;
+		}
 		for (rapidxml::xml_node<> *child = node->first_node(); child; child = child->next_sibling()) {
 			T temp;
 			temp.Resolve(child);
