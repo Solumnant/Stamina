@@ -12,7 +12,6 @@ void Stamina::Init(void) {
 	FILE *file;
 	freopen_s(&file, "CONOUT$", "w", stdout);
 #endif
-
 	Log(LEVEL_LOG, "Initializing Stamina...");
 	Log(LEVEL_LOG, "Finished initializing! Stamina loaded.");
 }
@@ -42,16 +41,15 @@ void Stamina::Log(eWARNING_LEVEL level, const char *fmt, ...) {
 			break;
 		case LEVEL_ERROR:
 			printf("[ERROR]:" " " "%s\n", msg);
-			::MessageBox(0, MaxString(msg), 0, 0);
+			::MessageBox(0, msg, 0, 0);
 			break;
 		default:
 			printf("[PRINT]:" " " "%s\n", msg);
 			break;
 	}
-
 }
-/*
-const char *Stamina::AsciiString(const TCHAR *str) {
+
+/*const char *Stamina::AsciiString(const TCHAR *str) {
 #ifdef UNICODE
 	static char to_return[MAX_PATH];
 	wcstombs(to_return, str, MAX_PATH);
@@ -68,5 +66,5 @@ const TCHAR *Stamina::MaxString(const char *str) {
 	return to_return;
 #else
 	return str;
-#endif */
-}
+#endif
+}*/

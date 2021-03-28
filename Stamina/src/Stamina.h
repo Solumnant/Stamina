@@ -15,9 +15,8 @@ public:
 	static void Init(void);
 	static void Shutdown(void);
 	static void Log(eWARNING_LEVEL level, const char *fmt, ...);
-	/*static const char *AsciiString(const TCHAR *str);
-	static const TCHAR *MaxString(const char *str);*/
-
+	static const char *AsciiString(const TCHAR *str);
+	static const TCHAR *MaxString(const char *str);
 };
-//extern Stamina *stamina;
+
 #endif
