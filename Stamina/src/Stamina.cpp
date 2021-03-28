@@ -11,10 +11,13 @@ void Stamina::Init(void) {
 	}
 	FILE *file;
 	freopen_s(&file, "CONOUT$", "w", stdout);
+	freopen_s(&file, "CONIN$", "r", stdin);
 #endif
 	Log(LEVEL_LOG, "Initializing Stamina...");
 	Log(LEVEL_LOG, "Finished initializing! Stamina loaded.");
 }
+
+
 
 void Stamina::Shutdown(void) {
 	Log(LEVEL_LOG, "Shutting down Stamina...");

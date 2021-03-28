@@ -30,6 +30,10 @@ public:
 			Stamina::Log(LEVEL_WARNING, "Unable to resolve %s, file expected %s.", rscMap.key, root->name());
 		}
 	}
+
+	T &GetResource(void) {
+		return m_resource;
+	}
 };
 
 #endif

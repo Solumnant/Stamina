@@ -13,6 +13,7 @@ DllMain(HINSTANCE hinstDLL, ULONG fdwReason, LPVOID lpvReserved) {
 			hInstance = hinstDLL;
 			Stamina::Init();
 			//RegisterNotification(onStartup, NULL, NOTIFY_SYSTEM_STARTUP);
+			
 			break;
 		case DLL_THREAD_ATTACH:
 			break;

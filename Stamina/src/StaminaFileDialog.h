@@ -1,7 +1,7 @@
 #ifndef _STAMINAFILEDIALOG_H
 #define _STAMINAFILEDIALOG_H
 #include <shobjidl.h>
-
+#include <vector>
 #define COM_STARTUP_FLAGS ::COINIT_APARTMENTTHREADED | ::COINIT_DISABLE_OLE1DDE
 
 COMDLG_FILTERSPEC rscFileFilter[] = {
@@ -12,7 +12,6 @@ COMDLG_FILTERSPEC rscFileFilter[] = {
 	//{ L"ALL", L"*.*" },
 };
 
-#define MAX_SIZE 4096;
 class StaminaFileDialog {
 private:
 	HRESULT m_hResult;

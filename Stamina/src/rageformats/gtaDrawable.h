@@ -34,6 +34,10 @@ public:
 	grmModel &GetModel(int index) {
 		return m_models[index];
 	}
+
+	const char *GetName(void) {
+		return m_name;
+	}
 };
 
 #endif
