@@ -3,7 +3,9 @@
 #include <Stamina.h>
 
 void gtaDrawable::Resolve(rapidxml::xml_node<> *node) {
-	//Stamina::Log(LEVEL_LOG, "Creating %s...", node->name());
+	if (node == nullptr) {
+		return;
+	}
 	for (rapidxml::xml_node<> *child = node->first_node(); child; child = child->next_sibling()) {
 		if (strcmp("Name", child->name()) == 0) {
 			m_name = child->value();
@@ -50,5 +52,9 @@ void gtaDrawable::Resolve(rapidxml::xml_node<> *node) {
 	}
 
 	m_shaderGroup.Resolve(node->first_node("ShaderGroup"));
-	m_models[0].Resolve(node->first_node("DrawableModelsHigh")->first_node());
+	m_models[0].Resolve(node->first_node("DrawableModelsHigh"));
+	m_models[1].Resolve(node->first_node("DrawableModelsMedium"));
+	m_models[2].Resolve(node->first_node("DrawableModelsLow"));
+	m_models[3].Resolve(node->first_node("DrawableModelsVeryLow"));
+
 }

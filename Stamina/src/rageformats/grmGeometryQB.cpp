@@ -1,6 +1,9 @@
 #include <rageformats/grmGeometryQB.h>
 
 void grmGeometryQB::Resolve(rapidxml::xml_node<> *node) {
+	if (node == nullptr) {
+		return;
+	}
 	for (rapidxml::xml_node<> *child = node->first_node(); child; child = child->next_sibling()) {
 		if (strcmp("ShaderIndex", child->name()) == 0) {
 			m_shaderidx = (unsigned short) atof(child->first_attribute()->value());

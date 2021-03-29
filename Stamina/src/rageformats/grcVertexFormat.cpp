@@ -3,6 +3,10 @@
 #include <Stamina.h>
 /*implement type (gtav1, gtav2, etc.) + size. */
 void grcVertexFormat::Resolve(rapidxml::xml_node<> *node) {
+	if (node == nullptr) {
+		return;
+	}
+
 	m_mask = 0;
 	for (rapidxml::xml_node<> *child = node->first_node(); child; child = child->next_sibling()) {
 		int index = GetVertexElementFromName(child->name());
