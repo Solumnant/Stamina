@@ -14,5 +14,9 @@ private:
 	CCollection<grmGeometryQB> m_geometries;
 public:
 	void Resolve(rapidxml::xml_node<> *root);
+
+	CCollection<grmGeometryQB> &GetGeometries(void) {
+		return m_geometries;
+	}
 };
 #endif

@@ -16,5 +16,9 @@ public:
 			m_collection.push_back(temp);
 		}
 	}
+
+	std::vector<T> &GetCollection(void) {
+		return m_collection;
+	}
 };
 #endif

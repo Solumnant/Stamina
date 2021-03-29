@@ -30,5 +30,12 @@ private:
 public:
 	void Resolve(rapidxml::xml_node<> *node);
     inline int GetVertexElementFromName(const char *name);
+
+    unsigned long long GetMask() {
+        return m_mask;
+    }
+    unsigned long long GetFVF() {
+        return m_vertexFields;
+    }
 };
 #endif

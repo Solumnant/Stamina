@@ -12,5 +12,9 @@ private:
 	grcIndexBuffer m_indexBuffer;
 public:
 	void Resolve(rapidxml::xml_node<> *node);
+
+	grcVertexBuffer &GetVertexBuffer(void) {
+		return m_vertexBuffer;
+	}
 };
 #endif
