@@ -7,22 +7,31 @@
 
 class grcVertexBuffer : IXml {
 private:
+	unsigned short m_vertexSize;
 	unsigned short m_flags;
-	unsigned char m_vertexSize;
+	unsigned int m_vertexCount;
 	grcVertexFormat m_vertexFormat;
-	char *m_data;
+	std::vector<float> m_data;
 public:
+	grcVertexBuffer() {
+		m_vertexSize = 0;
+		m_vertexCount = 0;
+	}
 	void Resolve(rapidxml::xml_node<> *node);
 
 	grcVertexFormat &GetVertexFormat(void) {
 		return m_vertexFormat;
 	}
 
-	unsigned int GetStride() {
+	unsigned short GetStride() {
 		return m_vertexSize;
 	}
 
-	char *GetData(void) {
+	unsigned int GetVertexCount() {
+		return m_vertexCount;
+	}
+
+	std::vector<float> &GetData(void) {
 		return m_data;
 	}
 };

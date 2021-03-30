@@ -10,11 +10,24 @@ void grcVertexBuffer::Resolve(rapidxml::xml_node<> *node) {
 		if (strcmp("Flags", child->name()) == 0) {
 			m_flags = (unsigned short)atof(child->first_attribute()->value());
 		}
+
 		if ((strcmp("Data", child->name()) == 0) ||
 			(strcmp("Data1", child->name()) == 0) ||
 			(strcmp("Data2", child->name()) == 0)) {
-			m_data = child->first_node()->value();
+			void *pData = child->first_node()->value();
+
+			char *value = strtok((char*)pData, " \r\n");
+			while (value) {
+				m_data.push_back(atof(value));
+				value = strtok(NULL, " \r\n");
+			}
 		}
 	}
 	m_vertexFormat.Resolve(node->first_node("Layout"));
+	for (int k = 0; k < 16; k++) {
+		if (m_vertexFormat.GetMask() & (1 << k)) {
+			m_vertexFormat.GetComponentCountOffset(m_vertexSize, k);
+		}
+	}
+	m_vertexCount = m_data.size() / m_vertexSize;
 }
