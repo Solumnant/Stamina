@@ -16,5 +16,8 @@ public:
 	grcVertexBuffer &GetVertexBuffer(void) {
 		return m_vertexBuffer;
 	}
+	grcIndexBuffer &GetIndexBuffer(void) {
+		return m_indexBuffer;
+	}
 };
 #endif
