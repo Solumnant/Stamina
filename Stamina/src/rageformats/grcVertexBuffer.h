@@ -7,7 +7,7 @@
 
 class grcVertexBuffer : IXml {
 private:
-	unsigned short m_vertexSize;
+	unsigned char m_vertexSize;
 	unsigned short m_flags;
 	unsigned int m_vertexCount;
 	grcVertexFormat m_vertexFormat;

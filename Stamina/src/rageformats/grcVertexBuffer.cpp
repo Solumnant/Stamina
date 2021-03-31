@@ -26,7 +26,7 @@ void grcVertexBuffer::Resolve(rapidxml::xml_node<> *node) {
 	m_vertexFormat.Resolve(node->first_node("Layout"));
 	for (int k = 0; k < 16; k++) {
 		if (m_vertexFormat.GetMask() & (1 << k)) {
-			m_vertexFormat.GetComponentCountOffset(m_vertexSize, k);
+			m_vertexFormat.GetComponentCountOffset((int&)m_vertexSize, k);
 		}
 	}
 	m_vertexCount = m_data.size() / m_vertexSize;
