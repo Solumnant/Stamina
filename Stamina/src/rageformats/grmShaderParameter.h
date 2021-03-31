@@ -9,10 +9,15 @@ enum eParameterType : char {
 
 class grmShaderParameter : IXml {
 private:
+	/*every parameter*/
 	const char *m_name;
 	char m_type;
+	/*texture parameter*/
 	Vector4 m_values;
 	const char *m_samplerTxd;
+	/*array parameter*/
+	std::vector<Vector4> m_array;
+
 public:
 	void Resolve(rapidxml::xml_node<> *root);
 

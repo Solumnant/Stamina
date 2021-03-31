@@ -7,12 +7,36 @@ void grmShaderParameter::Resolve(rapidxml::xml_node<> *node) {
 	}
 
 	m_name = node->first_attribute("name")->value();
-	m_type = strcmp("Texture", (node->first_attribute("type")->value())) ? (char)1 : (char)0;
 
-	if ((int)m_type == 0 && node->first_node()) {
-		m_samplerTxd = node->first_node("Name")->value();
-	} else if ((int)m_type == 1) {
+	if (strcmp("Texture", node->first_attribute("type")->value()) == 0) {
+		m_type = 0;
+		if (node->first_node()) {
+			m_samplerTxd = node->first_node("Name")->value();
+		}
+	} else if (strcmp("Vector", node->first_attribute("type")->value()) == 0) {
+		m_type = 1;
 		m_samplerTxd = NULL;
 		m_values = ParseVec4(node);
+	} else if (strcmp("Array", node->first_attribute("type")->value()) == 0) {
+		m_type = 2;
+		for (rapidxml::xml_node<> *child = node->first_node(); child; child = child->next_sibling()) {
+			Vector4 temp;
+			temp = ParseVec4(child);
+			m_array.push_back(temp);
+		}
 	}
+
+	//if ((int)m_type == 0 && node->first_node()) {
+	//	m_samplerTxd = node->first_node("Name")->value();
+	//} else if ((int)m_type == 1) {
+	//	m_samplerTxd = NULL;
+	//	m_values = ParseVec4(node);
+	//} else if ((int)m_type == 2) {
+	//	for (rapidxml::xml_node<> *child = node->first_node(); child; child = child->next_sibling()) {
+	//		Vector4 temp;
+	//		temp = ParseVec4(child);
+	//		m_array.push_back(temp);
+	//	}
+
+	//}
 }
