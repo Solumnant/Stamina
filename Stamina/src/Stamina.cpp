@@ -9,9 +9,12 @@ void Stamina::Init(void) {
 		MessageBox(NULL, "Failed To Open Console", NULL, MB_OK);
 		return;
 	}
+	//const char *output = "stamina-output.log.txt";
 	FILE *file;
 	freopen_s(&file, "CONOUT$", "w", stdout);
 	freopen_s(&file, "CONIN$", "r", stdin);
+
+	//freopen_s(&file, output, "w", stdout);
 #endif
 	Log(LEVEL_LOG, "Initializing Stamina...");
 	Log(LEVEL_LOG, "Finished initializing! Stamina loaded.");
