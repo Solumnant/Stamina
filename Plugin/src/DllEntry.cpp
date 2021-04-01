@@ -4,7 +4,7 @@
 #include <notify.h>
 #include <StaminaMax.h>
 extern ClassDesc2 *GetResourceImporterDesc();
-
+extern ClassDesc2 *GetStaminaMenuDesc();
 //__declspec(dllexport)
 //int LibInitialize(void) {
 //#pragma message(TODO("Check for failure when things can actually fail here."))
@@ -57,7 +57,7 @@ DllMain(HINSTANCE hinstDLL, ULONG fdwReason, LPVOID lpvReserved) {
 
 __declspec(dllexport) int
 LibNumberClasses(void) {
-	return 1;
+	return 2;
 }
 
 __declspec(dllexport) const TCHAR *
@@ -70,7 +70,8 @@ LibClassDesc(int i) {
 	switch (i) {
 		case 0:
 			return GetResourceImporterDesc() /*desc()*/;
-
+		case 1:
+			return GetStaminaMenuDesc();
 		default:
 			return NULL;
 	}
