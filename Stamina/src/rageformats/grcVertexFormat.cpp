@@ -18,51 +18,51 @@ void grcVertexFormat::Resolve(rapidxml::xml_node<> *node) {
 
 inline int grcVertexFormat::GetVertexElementFromName(const char *name) {
 	if (strcmp("Position", name) == 0) {
-		return (int)VertexElementTypes::PositionType;
+		return (int)VertexElementTypes::d3dPositionType;
 	}
 	if (strcmp("BlendWeights", name) == 0) {
-		return (int)VertexElementTypes::BlendWeightType;
+		return (int)VertexElementTypes::d3dBlendWeightType;
 	}
 	if (strcmp("BlendIndices", name) == 0) {
-		return (int)VertexElementTypes::BlendIndicesType;
+		return (int)VertexElementTypes::d3dBlendIndicesType;
 	}
 	if (strcmp("Normal", name) == 0) {
-		return (int)VertexElementTypes::NormalType;
+		return (int)VertexElementTypes::d3dNormalType;
 	}
 	if (strcmp("Colour0", name) == 0) {
-		return (int)VertexElementTypes::ColorType;
+		return (int)VertexElementTypes::d3dColorType;
 	}
 	if (strcmp("Colour1", name) == 0) {
-		return (int)VertexElementTypes::Color2Type;
+		return (int)VertexElementTypes::d3dColor2Type;
 	}
 	if (strcmp("TexCoord0", name) == 0) {
-		return (int)VertexElementTypes::TexCoord0Type;
+		return (int)VertexElementTypes::d3dTexCoord0Type;
 	}
 	if (strcmp("TexCoord1", name) == 0) {
-		return (int)VertexElementTypes::TexCoord1Type;
+		return (int)VertexElementTypes::d3dTexCoord1Type;
 	}
 	if (strcmp("TexCoord2", name) == 0) {
-		return (int)VertexElementTypes::TexCoord2Type;
+		return (int)VertexElementTypes::d3dTexCoord2Type;
 	}
 	if (strcmp("TexCoord3", name) == 0) {
-		return (int)VertexElementTypes::TexCoord3Type;
+		return (int)VertexElementTypes::d3dTexCoord3Type;
 	}
 	if (strcmp("TexCoord4", name) == 0) {
-		return (int)VertexElementTypes::TexCoord4Type;
+		return (int)VertexElementTypes::d3dTexCoord4Type;
 	}
 	if (strcmp("TexCoord5", name) == 0) {
-		return (int)VertexElementTypes::TexCoord5Type;
+		return (int)VertexElementTypes::d3dTexCoord5Type;
 	}
 	if (strcmp("TexCoord6", name) == 0) {
-		return (int)VertexElementTypes::TexCoord6Type;
+		return (int)VertexElementTypes::d3dTexCoord6Type;
 	}
 	if (strcmp("TexCoord7", name) == 0) {
-		return (int)VertexElementTypes::TexCoord7Type;
+		return (int)VertexElementTypes::d3dTexCoord7Type;
 	}
 	if (strcmp("Tangent", name) == 0) {
-		return (int)VertexElementTypes::TangentType;
+		return (int)VertexElementTypes::d3dTangentType;
 	}
 	if (strcmp("Binormal", name) == 0) {
-		return (int)VertexElementTypes::BinormalType;
+		return (int)VertexElementTypes::d3dBinormalType;
 	}
 }

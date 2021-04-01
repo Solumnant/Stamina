@@ -3,22 +3,22 @@
 #include <Xml.h>
 
 enum VertexElementTypes : int {
-    PositionType = 0, // D3DVERTEXELEMENT_FLOAT3
-    BlendWeightType = 1, // D3DVERTEXELEMENT_D3DCOLOR
-    BlendIndicesType = 2, // D3DVERTEXELEMENT_D3DCOLOR
-    NormalType = 3, // D3DVERTEXELEMENT_FLOAT3
-    ColorType = 4, // D3DVERTEXELEMENT_D3DCOLOR
-    Color2Type = 5, // D3DVERTEXELEMENT_D3DCOLOR
-    TexCoord0Type = 6, // D3DVERTEXELEMENT_FLOAT2
-    TexCoord1Type = 7, // D3DVERTEXELEMENT_FLOAT2
-    TexCoord2Type = 8, // D3DVERTEXELEMENT_FLOAT2
-    TexCoord3Type = 9, // D3DVERTEXELEMENT_FLOAT2
-    TexCoord4Type = 10, // D3DVERTEXELEMENT_FLOAT2
-    TexCoord5Type = 11, // D3DVERTEXELEMENT_FLOAT2
-    TexCoord6Type = 12, // D3DVERTEXELEMENT_FLOAT2
-    TexCoord7Type = 13, // D3DVERTEXELEMENT_FLOAT2 
-    TangentType = 14, // D3DVERTEXELEMENT_FLOAT4
-    BinormalType = 15, // D3DVERTEXELEMENT_FLOAT4
+    d3dPositionType = 0, // D3DVERTEXELEMENT_FLOAT3
+    d3dBlendWeightType = 1, // D3DVERTEXELEMENT_D3DCOLOR
+    d3dBlendIndicesType = 2, // D3DVERTEXELEMENT_D3DCOLOR
+    d3dNormalType = 3, // D3DVERTEXELEMENT_FLOAT3
+    d3dColorType = 4, // D3DVERTEXELEMENT_D3DCOLOR
+    d3dColor2Type = 5, // D3DVERTEXELEMENT_D3DCOLOR
+    d3dTexCoord0Type = 6, // D3DVERTEXELEMENT_FLOAT2
+    d3dTexCoord1Type = 7, // D3DVERTEXELEMENT_FLOAT2
+    d3dTexCoord2Type = 8, // D3DVERTEXELEMENT_FLOAT2
+    d3dTexCoord3Type = 9, // D3DVERTEXELEMENT_FLOAT2
+    d3dTexCoord4Type = 10, // D3DVERTEXELEMENT_FLOAT2
+    d3dTexCoord5Type = 11, // D3DVERTEXELEMENT_FLOAT2
+    d3dTexCoord6Type = 12, // D3DVERTEXELEMENT_FLOAT2
+    d3dTexCoord7Type = 13, // D3DVERTEXELEMENT_FLOAT2 
+    d3dTangentType = 14, // D3DVERTEXELEMENT_FLOAT4
+    d3dBinormalType = 15, // D3DVERTEXELEMENT_FLOAT4
 };
 
 enum D3DVertexElementType {
@@ -34,8 +34,6 @@ enum D3DVertexElementType {
     D3DVERTEXELEMENT_D3DCOLOR = 9,
     D3DVERTEXELEMENT_DEC3N = 10,
 };
-
-
 
 
 class grcVertexFormat : IXml {
