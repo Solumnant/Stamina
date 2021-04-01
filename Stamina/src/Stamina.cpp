@@ -1,7 +1,11 @@
 ﻿#include <Stamina.h>
 #include <stdio.h>
 
-#define DEBUG
+
+
+//static constexpr int STAMINACORE_VERSION_MAJOR = 1;
+//static constexpr int STAMINACORE_VERSION_MINOR = 0;
+//static constexpr int STAMINACORE_VERSION = STAMINACORE_VERSION_MAJOR * 100 + STAMINACORE_VERSION_MINOR;
 
 void Stamina::Init(void) {
 #ifdef DEBUG
@@ -16,14 +20,13 @@ void Stamina::Init(void) {
 
 	//freopen_s(&file, output, "w", stdout);
 #endif
-	Log(LEVEL_LOG, "Initializing Stamina...");
-	Log(LEVEL_LOG, "Finished initializing! Stamina loaded.");
+	Log(LEVEL_LOG, "Hooked stamina-core.dll");
 }
 
 
 
 void Stamina::Shutdown(void) {
-	Log(LEVEL_LOG, "Shutting down Stamina...");
+	Log(LEVEL_LOG, "Freed stamina-core.dll");
 #ifdef DEBUG
 	FreeConsole();
 #endif
@@ -40,17 +43,17 @@ void Stamina::Log(eWARNING_LEVEL level, const char *fmt, ...) {
 	msg[sizeof(msg) - 1] = 0;
 	switch (level) {
 		case LEVEL_LOG:
-			printf("[LOG]:" " " "%s\n", msg);
+			printf("[STAMINA-CORE][LOG]:" " " "%s\n", msg);
 			break;
 		case LEVEL_WARNING:
-			printf("[WARNING]:" " " "%s\n", msg);
+			printf("[STAMINA-CORE][WARNING]:" " " "%s\n", msg);
 			break;
 		case LEVEL_ERROR:
-			printf("[ERROR]:" " " "%s\n", msg);
+			printf("[STAMINA-CORE][ERROR]:" " " "%s\n", msg);
 			::MessageBox(0, msg, 0, 0);
 			break;
 		default:
-			printf("[PRINT]:" " " "%s\n", msg);
+			printf("[STAMINA-CORE][PRINT]:" " " "%s\n", msg);
 			break;
 	}
 

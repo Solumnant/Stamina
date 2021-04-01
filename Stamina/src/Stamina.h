@@ -1,5 +1,5 @@
-﻿#ifndef _STAMINA_COMMON_H
-#define _STAMINA_COMMON_H
+﻿#ifndef _STAMINA_CORE_H
+#define _STAMINA_CORE_H
 #include <wtypes.h>
 
 #define	MAX_PRINT_MSG_SIZE	4096
