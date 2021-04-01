@@ -20,6 +20,10 @@ private:
 	std::vector<std::wstring> m_filePaths;
 
 public:
+	StaminaFileDialog() {
+		m_pFileOpenDialog = NULL;
+		m_pShellItems = NULL;
+	}
 	void OpenFileDialog(void) {
 		m_hResult = ::CoInitializeEx(NULL, COM_STARTUP_FLAGS);
 		if (SUCCEEDED(m_hResult)) {
@@ -47,8 +51,13 @@ public:
 	
 	
 	void GetLastSelected(void) {
+		if (m_pShellItems == NULL) {
+			return;
+		}
+
 		DWORD itemCount;
 		m_hResult = m_pShellItems->GetCount(&itemCount);
+
 		m_filePaths.clear();
 		m_filePaths.reserve(itemCount);
 		for (DWORD i = 0; SUCCEEDED(m_hResult) && (i < itemCount); i++) {
