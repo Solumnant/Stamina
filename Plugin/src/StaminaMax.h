@@ -2,6 +2,7 @@
 #define _STAMINAMAX_H
 #define	MAX_PRINT_MSG_SIZE	4096
 #include <wtypes.h>
+
 static constexpr int STAMINAMAX_VERSION_MAJOR = 1;
 static constexpr int STAMINAMAX_VERSION_MINOR = 0;
 static constexpr int STAMINAMAX_VERSION = STAMINAMAX_VERSION_MAJOR * 100 + STAMINAMAX_VERSION_MINOR;

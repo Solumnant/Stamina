@@ -77,6 +77,16 @@ LibClassDesc(int i) {
 	}
 }
 
+TCHAR *
+GetString(int id) {
+	static TCHAR buf[256];
+
+	if (hInstance)
+		return LoadString(hInstance, id, buf, _countof(buf)) ? buf : NULL;
+	return NULL;
+}
+
+
 __declspec(dllexport) ULONG
 LibVersion(void) { return VERSION_3DSMAX; }
 

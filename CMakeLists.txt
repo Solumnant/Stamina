@@ -10,5 +10,6 @@ project ("Stamina")
 
 add_subdirectory("Client")
 add_subdirectory("Stamina")
+add_subdirectory("Shared")
 add_subdirectory("Plugin")
 

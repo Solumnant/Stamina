@@ -1,5 +1,6 @@
 #include <StaminaMax.h>
 #include <stdio.h>
+#include <time/timestamp.h>
 
 void StaminaMax::Init(void) {
 #ifdef DEBUG
@@ -30,24 +31,24 @@ void StaminaMax::Shutdown(void) {
 void StaminaMax::Log(Max::eWARNING_LEVEL level, const char *fmt, ...) {
 	va_list		argptr;
 	char		msg[MAX_PRINT_MSG_SIZE];
-
+	char		*current_time = timestamp();
 	va_start(argptr, fmt);
 	vsnprintf(msg, sizeof(msg), fmt, argptr);
 	va_end(argptr);
 	msg[sizeof(msg) - 1] = 0;
 	switch (level) {
 		case Max::LEVEL_LOG:
-			printf("[STAMINA-MAX][LOG]:" " " "%s\n", msg);
+			printf("[%s] [STAMINA-MAX ] [LOG]:" " " "%s\n", current_time, msg);
 			break;
 		case Max::LEVEL_WARNING:
-			printf("[STAMINA-MAX][WARNING]:" " " "%s\n", msg);
+			printf("[%s] [STAMINA-MAX ] [WRN]:" " " "%s\n", current_time, msg);
 			break;
 		case Max::LEVEL_ERROR:
-			printf("[STAMINA-MAX][ERROR]:" " " "%s\n", msg);
+			printf("[%s] [STAMINA-MAX ] [ERR]:" " " "%s\n", current_time, msg);
 			::MessageBox(0, MaxString(msg), 0, 0);
 			break;
 		default:
-			printf("[STAMINA-MAX][PRINT]:" " " "%s\n", msg);
+			printf("[%s] [STAMINA-MAX ] [PRT]:" " " "%s\n", current_time, msg);
 			break;
 	}
 }

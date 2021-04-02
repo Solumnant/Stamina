@@ -1,5 +1,7 @@
 ﻿#include <Stamina.h>
 #include <stdio.h>
+#include <time/timestamp.h>
+
 
 
 
@@ -36,24 +38,24 @@ void Stamina::Shutdown(void) {
 void Stamina::Log(eWARNING_LEVEL level, const char *fmt, ...) {
 	va_list		argptr;
 	char		msg[MAX_PRINT_MSG_SIZE];
-
+	char		*current_time = timestamp();
 	va_start(argptr, fmt);
 	vsnprintf(msg, sizeof(msg), fmt, argptr);
 	va_end(argptr);
 	msg[sizeof(msg) - 1] = 0;
 	switch (level) {
 		case LEVEL_LOG:
-			printf("[STAMINA-CORE][LOG]:" " " "%s\n", msg);
+			printf("[%s] [STAMINA-CORE] [LOG]:" " " "%s\n", current_time, msg);
 			break;
 		case LEVEL_WARNING:
-			printf("[STAMINA-CORE][WARNING]:" " " "%s\n", msg);
+			printf("[%s] [STAMINA-CORE] [WRN]:" " " "%s\n", current_time, msg);
 			break;
 		case LEVEL_ERROR:
-			printf("[STAMINA-CORE][ERROR]:" " " "%s\n", msg);
+			printf("[%s] [STAMINA-CORE] [ERR]:" " " "%s\n", current_time, msg);
 			::MessageBox(0, msg, 0, 0);
 			break;
 		default:
-			printf("[STAMINA-CORE][PRINT]:" " " "%s\n", msg);
+			printf("[%s] [STAMINA-CORE] [PRT]:" " " "%s\n", current_time, msg);
 			break;
 	}
 
