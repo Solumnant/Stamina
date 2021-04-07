@@ -1,4 +1,4 @@
-add_library(Shared SHARED "src/time/timestamp.h"  "src/time/timestamp.cpp")
+add_library(Shared SHARED "src/time/timestamp.h"  "src/time/timestamp.cpp" "src/dialog/FileDialog.h" "src/dialog/FileDialog.cpp")
 set_target_properties(Shared 
                      PROPERTIES 
                      OUTPUT_NAME "stamina-shared"
