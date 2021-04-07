@@ -1,7 +1,9 @@
 #ifndef _CCOLLECTION_H
 #define _CCOLLECTION_H
+
 #include <vector>
 #include <Xml.h>
+
 template<typename T>
 class CCollection : IXml {
 	std::vector<T> m_collection;
@@ -21,4 +23,5 @@ public:
 		return m_collection;
 	}
 };
+
 #endif

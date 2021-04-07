@@ -1,4 +1,3 @@
-
 #include <rageformats/gtaDrawable.h>
 #include <Stamina.h>
 

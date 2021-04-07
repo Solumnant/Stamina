@@ -1,7 +1,9 @@
 #ifndef _GRC_INDEXBUFFER_H
 #define _GRC_INDEXBUFFER_H
+
 #include <Xml.h>
 #include <vector>
+
 class grcIndexBuffer : IXml {
 private:
 	std::vector<unsigned short> m_data;

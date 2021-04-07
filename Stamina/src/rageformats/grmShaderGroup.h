@@ -5,11 +5,11 @@
 #include <rageformats/grmShaderFx.h>
 #include <rageformats/grcTexturePC.h>
 #include <rageformats/CCollection.h>
+
 class grmShaderGroup : IXml {
 private:
 	unsigned int m_unk;
-	CCollection<grcTexturePC> m_txd; /* pgDictionary<grcTexturePC> */
-	//grmShaderArray m_shaderArr /* pgObjectArray<grmShaderFx> */;
+	CCollection<grcTexturePC> m_txd;
 	CCollection<grmShaderFx> m_shaderArr;
 public:
 	void Resolve(rapidxml::xml_node<> *root);

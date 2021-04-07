@@ -1,5 +1,6 @@
 #ifndef _GRM_SHADER_PARAMETER_H
 #define _GRM_SHADER_PARAMETER_H
+
 #include <Xml.h>
 
 enum eParameterType : char {
@@ -22,4 +23,5 @@ public:
 	void Resolve(rapidxml::xml_node<> *root);
 
 };
+
 #endif

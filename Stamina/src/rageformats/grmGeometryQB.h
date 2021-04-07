@@ -1,8 +1,10 @@
 #ifndef _GRM_GEOMETRY_QB_H
 #define _GRM_GEOMETRY_QB_H
+
 #include <Xml.h>
 #include <rageformats/grcIndexBuffer.h>
 #include <rageformats/grcVertexBuffer.h>
+
 class grmGeometryQB : IXml {
 private:
 	unsigned short m_shaderidx;
@@ -20,4 +22,5 @@ public:
 		return m_indexBuffer;
 	}
 };
+
 #endif

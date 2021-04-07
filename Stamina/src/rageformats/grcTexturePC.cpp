@@ -1,9 +1,11 @@
 #include <rageformats/grcTexturePC.h>
 #include <Stamina.h>
+
 void grcTexturePC::Resolve(rapidxml::xml_node<> *node) {
 	if (node == nullptr) {
 		return;
 	}
+
 	for (rapidxml::xml_node<> *child = node->first_node(); child; child = child->next_sibling()) {
 		if (strcmp("Name", child->name()) == 0) {
 			m_name = child->value();

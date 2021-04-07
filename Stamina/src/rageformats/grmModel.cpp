@@ -4,6 +4,7 @@ void grmModel::Resolve(rapidxml::xml_node<> *node) {
 	if (node == nullptr) {
 		return;
 	}
+
 	node = node->first_node();
 	for (rapidxml::xml_node<> *child = node->first_node(); child; child = child->next_sibling()) {
 		if (strcmp("RenderMask", child->name()) == 0) {

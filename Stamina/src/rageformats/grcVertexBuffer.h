@@ -1,9 +1,9 @@
 #ifndef _GRC_VERTEXBUFFER_H
 #define _GRC_VERTEXBUFFER_H
+
 #include <Xml.h>
 #include <vector>
 #include <rageformats/grcVertexFormat.h>
-
 
 class grcVertexBuffer : IXml {
 private:

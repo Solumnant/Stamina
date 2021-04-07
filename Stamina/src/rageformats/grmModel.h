@@ -4,6 +4,7 @@
 #include <Xml.h>
 #include <rageformats/grmGeometryQB.h>
 #include <rageformats/CCollection.h>
+
 class grmModel : IXml {
 private:
 	char m_renderMask;
@@ -19,4 +20,5 @@ public:
 		return m_geometries;
 	}
 };
+
 #endif

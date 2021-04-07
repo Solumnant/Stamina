@@ -4,6 +4,7 @@
 #include <Xml.h>
 #include <rageformats/grmShaderParameter.h>
 #include <rageformats/CCollection.h>
+
 class grmShaderFx : IXml {
 private:
 	unsigned int m_name;
@@ -13,4 +14,5 @@ private:
 public:
 	void Resolve(rapidxml::xml_node<> *root);
 };
+
 #endif

@@ -1,10 +1,12 @@
 #include <rageformats/grmShaderFx.h>
 #include <Stamina.h>
-#include <utils/hash.h>
+#include <utils/JenkinsHash.h>
+
 void grmShaderFx::Resolve(rapidxml::xml_node<> *node) {
 	if (node == nullptr) {
 		return;
 	}
+
 	for (rapidxml::xml_node<> *child = node->first_node(); child; child = child->next_sibling()) {
 		if (strcmp("Name", child->name()) == 0) {
 			m_name = HashString(child->value());
@@ -17,5 +19,6 @@ void grmShaderFx::Resolve(rapidxml::xml_node<> *node) {
 		}
 		
 	}
+
 	m_parameters.Resolve(node->first_node("Parameters"));
 }

@@ -1,5 +1,6 @@
 #ifndef _JOOAT_H
 #define _JOOAT_H
+
 inline unsigned int HashString(const char *string) {
 	unsigned int hash = 0;
 
@@ -15,4 +16,5 @@ inline unsigned int HashString(const char *string) {
 
 	return hash;
 }
+
 #endif

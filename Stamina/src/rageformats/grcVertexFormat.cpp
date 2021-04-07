@@ -1,7 +1,9 @@
 #include <rageformats/grcVertexFormat.h>
 #include "grcVertexFormat.h"
 #include <Stamina.h>
+
 /*implement type (gtav1, gtav2, etc.) + size. */
+
 void grcVertexFormat::Resolve(rapidxml::xml_node<> *node) {
 	if (node == nullptr) {
 		return;

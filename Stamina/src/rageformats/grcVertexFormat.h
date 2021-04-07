@@ -1,5 +1,6 @@
 #ifndef _GRC_VERTEXFORMAT_H
 #define _GRC_VERTEXFORMAT_H
+
 #include <Xml.h>
 
 enum VertexElementTypes : int {
@@ -48,9 +49,11 @@ public:
     unsigned long long GetMask() {
         return m_mask;
     }
+
     unsigned long long GetFVF() {
         return m_vertexFields;
     }
+
     void GetComponentCountOffset(int &offset, int bit) {
         D3DVertexElementType elementType = (D3DVertexElementType)((m_vertexFields >> (4 * bit)) & 0xF);
         switch (elementType) {
@@ -78,4 +81,5 @@ public:
     };
 
 };
+
 #endif
