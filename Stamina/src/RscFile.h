@@ -1,7 +1,7 @@
 #ifndef _RSCFILE_H
 #define _RSCFILE_H
 #include <rapidxml/rapidxml_utils.hpp>
-
+#include <Stamina.h>
 enum ResourceFileType {
 	GTADRAWABLE_FILE = 0,
 	PGDICTIONARY_GTADRAWABLE_FILE,
@@ -26,8 +26,9 @@ public:
 		ResourceMap rscMap = RESOURCE_TABLE[rscType];
 		if (strcmp(rscMap.key, root->name()) == 0) {
 			m_resource.Resolve(root);
+			Stamina::Log(LEVEL_LOG, "Resolved resource '%s'.", rscMap.key);
 		} else {
-			Stamina::Log(LEVEL_WARNING, "Unable to resolve %s, file expected %s.", rscMap.key, root->name());
+			Stamina::Log(LEVEL_WARNING, "Unable to resolve '%s', file expected '%s'.", rscMap.key, root->name());
 		}
 	}
 
