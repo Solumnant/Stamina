@@ -9,20 +9,21 @@ COMDLG_FILTERSPEC rscFileFilter[] = {
 };
 
 void StaminaFileDialog::OpenFileDialog() {
-	m_hResult = ::CoInitializeEx(NULL, COM_STARTUP_FLAGS);
-	if (SUCCEEDED(m_hResult)) {
-		m_hResult = ::CoCreateInstance(::CLSID_FileOpenDialog, NULL, CLSCTX_ALL, ::IID_IFileOpenDialog, (void **)(&m_pFileOpenDialog));
-		if (SUCCEEDED(m_hResult)) {
-			m_hResult = m_pFileOpenDialog->SetTitle(L"Stamina File Selection Dialog");
-			if (SUCCEEDED(m_hResult)) {
-				m_hResult = m_pFileOpenDialog->SetOptions(FOS_ALLOWMULTISELECT);
-				if (SUCCEEDED(m_hResult)) {
-					m_hResult = m_pFileOpenDialog->SetFileTypes(ARRAYSIZE(rscFileFilter), rscFileFilter);
-					if (SUCCEEDED(m_hResult)) {
-						m_hResult = m_pFileOpenDialog->Show(NULL);
+	HRESULT hResult;
+	hResult = ::CoInitializeEx(NULL, COM_STARTUP_FLAGS);
+	if (SUCCEEDED(hResult)) {
+		hResult = ::CoCreateInstance(::CLSID_FileOpenDialog, NULL, CLSCTX_ALL, ::IID_IFileOpenDialog, (void **)(&m_pFileOpenDialog));
+		if (SUCCEEDED(hResult)) {
+			hResult = m_pFileOpenDialog->SetTitle(L"Stamina File Selection Dialog");
+			if (SUCCEEDED(hResult)) {
+				hResult = m_pFileOpenDialog->SetOptions(FOS_ALLOWMULTISELECT);
+				if (SUCCEEDED(hResult)) {
+					hResult = m_pFileOpenDialog->SetFileTypes(ARRAYSIZE(rscFileFilter), rscFileFilter);
+					if (SUCCEEDED(hResult)) {
+						hResult = m_pFileOpenDialog->Show(NULL);
 
-						if (SUCCEEDED(m_hResult)) {
-							m_hResult = m_pFileOpenDialog->GetResults(&m_pShellItems);
+						if (SUCCEEDED(hResult)) {
+							hResult = m_pFileOpenDialog->GetResults(&m_pShellItems);
 						}
 					}
 				}
@@ -31,4 +32,36 @@ void StaminaFileDialog::OpenFileDialog() {
 		}
 	}
 	m_pFileOpenDialog->Release();
+}
+
+void StaminaFileDialog::GetLastSelected(void) {
+	if (m_pShellItems == NULL) {
+		return;
+	}
+
+	DWORD itemCount;
+	HRESULT hResult;
+	hResult = m_pShellItems->GetCount(&itemCount);
+
+	m_filePaths.clear();
+	m_filePaths.reserve(itemCount);
+	for (DWORD i = 0; SUCCEEDED(hResult) && (i < itemCount); i++) {
+
+		IShellItem *shellItem;
+		hResult = m_pShellItems->GetItemAt(i, &shellItem);
+
+		if (SUCCEEDED(hResult)) {
+			PWSTR pszPath;
+			hResult = shellItem->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, &pszPath);
+			if (SUCCEEDED(hResult)) {
+				m_filePaths.push_back(std::wstring(pszPath));
+				CoTaskMemFree(pszPath);
+			}
+		}
+	}
+}
+
+std::vector<std::wstring> &StaminaFileDialog::GetFilePaths(void) {
+	GetLastSelected();
+	return m_filePaths;
 }
