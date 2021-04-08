@@ -1,4 +1,4 @@
-#ifndef _STAMINAFILEDIALOG_H
+#ifndef _FILEDIALOG_H
 #define _FILEDIALOG_H
 
 #include <vector>
