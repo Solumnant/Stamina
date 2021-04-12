@@ -1,7 +1,7 @@
 #ifndef _GRM_SHADER_FX_H
 #define _GRM_SHADER_FX_H
 
-#include <Xml.h>
+#include <xml/Xml.h>
 #include <rageformats/grmShaderParameter.h>
 #include <rageformats/CCollection.h>
 

@@ -6,7 +6,7 @@ gtaDrawable (#dr) is based on Codewalker's (https://github.com/dexyfex/CodeWalke
 Most files in this directory (rageformats) are based on the implementation from the CitizenFX FiveM repo (https://github.com/citizenfx/fivem/tree/34069da52f788a6e21c7ae2e9fc6d84dda932abe/code/components/rage-formats-x).
 */
 
-#include <Xml.h>
+#include <xml/Xml.h>
 #include <math/Vectors.h>
 #include <rageformats/grmShaderGroup.h>
 #include <rageformats/grmModel.h>
@@ -26,6 +26,7 @@ private:
 
 public: 
 	void Resolve(rapidxml::xml_node<> *root);
+	void Write(rapidxml::xml_document<> *document, rapidxml::xml_node<> *parent);
 
 	grmShaderGroup &GetShaderGroup(void) {
 		return m_shaderGroup;
@@ -37,6 +38,20 @@ public:
 
 	const char *GetName(void) {
 		return m_name;
+	}
+
+	void SetName(const char *name) {
+		m_name = name;
+	}
+
+	Vector3 GetBsCenter(void) {
+		return m_bsCenter;
+	}
+
+	void SetBsCenter(float x, float y, float z) {
+		m_bsCenter.x = x;
+		m_bsCenter.y = y;
+		m_bsCenter.z = z;
 	}
 };
 

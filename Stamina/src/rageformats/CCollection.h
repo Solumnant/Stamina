@@ -2,7 +2,7 @@
 #define _CCOLLECTION_H
 
 #include <vector>
-#include <Xml.h>
+#include <xml/Xml.h>
 
 template<typename T>
 class CCollection : IXml {

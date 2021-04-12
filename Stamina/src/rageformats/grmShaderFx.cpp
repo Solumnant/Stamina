@@ -1,5 +1,4 @@
 #include <rageformats/grmShaderFx.h>
-#include <Stamina.h>
 #include <utils/JenkinsHash.h>
 
 void grmShaderFx::Resolve(rapidxml::xml_node<> *node) {

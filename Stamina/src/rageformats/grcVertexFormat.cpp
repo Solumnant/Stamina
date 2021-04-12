@@ -1,6 +1,4 @@
 #include <rageformats/grcVertexFormat.h>
-#include "grcVertexFormat.h"
-#include <Stamina.h>
 
 /*implement type (gtav1, gtav2, etc.) + size. */
 

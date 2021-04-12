@@ -1,7 +1,7 @@
 #ifndef _GRM_GEOMETRY_QB_H
 #define _GRM_GEOMETRY_QB_H
 
-#include <Xml.h>
+#include <xml/Xml.h>
 #include <rageformats/grcIndexBuffer.h>
 #include <rageformats/grcVertexBuffer.h>
 

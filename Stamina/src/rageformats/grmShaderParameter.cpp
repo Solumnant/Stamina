@@ -1,5 +1,4 @@
 #include <rageformats/grmShaderParameter.h>
-#include <Stamina.h>
 
 void grmShaderParameter::Resolve(rapidxml::xml_node<> *node) {
 	if (node == nullptr) {

@@ -5,9 +5,9 @@ void grcIndexBuffer::Resolve(rapidxml::xml_node<> *node) {
 		return;
 	}
 
-	if ((strcmp("Data", node->first_node()->name()) == 0) || 
-		(strcmp("Data1", node->first_node()->name()) == 0)|| 
-		(strcmp("Data2", node->first_node()->name()) == 0))  {
+	if ((strcmp("Data", node->first_node()->name()) == 0) ||
+		(strcmp("Data1", node->first_node()->name()) == 0) ||
+		(strcmp("Data2", node->first_node()->name()) == 0)) {
 		void *pData = node->first_node()->value();
 		char *value = strtok((char *)pData, " \r\n");
 		while (value) {

@@ -1,7 +1,7 @@
 #ifndef _GRCTEXTUREPC_H
 #define _GRCTEXTUREPC_H
 
-#include <Xml.h>
+#include <xml/Xml.h>
 
 class grcTexturePC : IXml {
 private:

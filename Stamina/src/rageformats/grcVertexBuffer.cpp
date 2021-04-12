@@ -16,7 +16,7 @@ void grcVertexBuffer::Resolve(rapidxml::xml_node<> *node) {
 			(strcmp("Data2", child->name()) == 0)) {
 			void *pData = child->first_node()->value();
 
-			char *value = strtok((char*)pData, " \r\n");
+			char *value = strtok((char *)pData, " \r\n");
 			while (value) {
 				m_data.push_back(atof(value));
 				value = strtok(NULL, " \r\n");
@@ -28,7 +28,7 @@ void grcVertexBuffer::Resolve(rapidxml::xml_node<> *node) {
 
 	for (int k = 0; k < 16; k++) {
 		if (m_vertexFormat.GetMask() & (1 << k)) {
-			m_vertexFormat.GetComponentCountOffset((int&)m_vertexSize, k);
+			m_vertexFormat.GetComponentCountOffset((int &)m_vertexSize, k);
 		}
 	}
 

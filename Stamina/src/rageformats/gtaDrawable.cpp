@@ -1,5 +1,4 @@
 #include <rageformats/gtaDrawable.h>
-#include <Stamina.h>
 
 void gtaDrawable::Resolve(rapidxml::xml_node<> *node) {
 	if (node == nullptr) {

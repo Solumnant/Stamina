@@ -1,7 +1,7 @@
 #ifndef _GRC_VERTEXFORMAT_H
 #define _GRC_VERTEXFORMAT_H
 
-#include <Xml.h>
+#include <xml/Xml.h>
 
 enum VertexElementTypes : int {
     d3dPositionType = 0, // D3DVERTEXELEMENT_FLOAT3

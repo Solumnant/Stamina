@@ -1,7 +1,7 @@
 #ifndef _GRM_MODEL_H
 #define _GRM_MODEL_H
 
-#include <Xml.h>
+#include <xml/Xml.h>
 #include <rageformats/grmGeometryQB.h>
 #include <rageformats/CCollection.h>
 

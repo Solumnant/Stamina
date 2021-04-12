@@ -1,7 +1,7 @@
 #ifndef _GRC_INDEXBUFFER_H
 #define _GRC_INDEXBUFFER_H
 
-#include <Xml.h>
+#include <xml/Xml.h>
 #include <vector>
 
 class grcIndexBuffer : IXml {

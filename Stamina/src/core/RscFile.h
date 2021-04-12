@@ -1,7 +1,9 @@
 #ifndef _RSCFILE_H
 #define _RSCFILE_H
+
+#include <core/Stamina.h>
 #include <rapidxml/rapidxml_utils.hpp>
-#include <Stamina.h>
+
 enum ResourceFileType {
 	GTADRAWABLE_FILE = 0,
 	PGDICTIONARY_GTADRAWABLE_FILE,

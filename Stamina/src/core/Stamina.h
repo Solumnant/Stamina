@@ -10,6 +10,10 @@ static enum eWARNING_LEVEL {
 	LEVEL_ERROR = 2,
 };
 
+static constexpr int STAMINACORE_VERSION_MAJOR = 1;
+static constexpr int STAMINACORE_VERSION_MINOR = 0;
+static constexpr int STAMINACORE_VERSION = STAMINACORE_VERSION_MAJOR * 100 + STAMINACORE_VERSION_MINOR;
+
 class Stamina {
 public:
 	static void Init(void);

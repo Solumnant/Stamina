@@ -1,7 +1,7 @@
 #ifndef _GRM_SHADERGROUP_H
 #define _GRM_SHADERGROUP_H
-#include <Xml.h>
 
+#include <xml/Xml.h>
 #include <rageformats/grmShaderFx.h>
 #include <rageformats/grcTexturePC.h>
 #include <rageformats/CCollection.h>

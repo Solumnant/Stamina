@@ -1,5 +1,4 @@
 #include <rageformats/grcTexturePC.h>
-#include <Stamina.h>
 
 void grcTexturePC::Resolve(rapidxml::xml_node<> *node) {
 	if (node == nullptr) {
