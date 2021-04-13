@@ -10,6 +10,7 @@ Most files in this directory (rageformats) are based on the implementation from 
 #include <math/Vectors.h>
 #include <rageformats/grmShaderGroup.h>
 #include <rageformats/grmModel.h>
+#include <rageformats/CLightAttr.h>
 
 class gtaDrawable : IXml {
 private:
@@ -23,10 +24,11 @@ private:
 	unsigned short m_unk;
 	grmShaderGroup m_shaderGroup;
 	grmModel m_models[4];
+	CCollection<CLightAttr> m_lightAttrs;
 
 public: 
 	void Resolve(rapidxml::xml_node<> *root);
-	void Write(rapidxml::xml_document<> *document, rapidxml::xml_node<> *parent);
+	//void Write(rapidxml::xml_document<> *document, rapidxml::xml_node<> *parent);
 
 	grmShaderGroup &GetShaderGroup(void) {
 		return m_shaderGroup;

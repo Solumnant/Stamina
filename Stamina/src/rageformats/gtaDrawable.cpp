@@ -54,5 +54,6 @@ void gtaDrawable::Resolve(rapidxml::xml_node<> *node) {
 	m_models[1].Resolve(node->first_node("DrawableModelsMedium"));
 	m_models[2].Resolve(node->first_node("DrawableModelsLow"));
 	m_models[3].Resolve(node->first_node("DrawableModelsVeryLow"));
+	m_lightAttrs.Resolve(node->first_node("Lights"));
 
 }
